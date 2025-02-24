@@ -1,0 +1,10 @@
+# ninja log v5
+34	1629	7620682737344633	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	5ef8974470571f46
+27	1662	7620682737679578	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	80689d476dd9fc3d
+14	1704	7620682738127619	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	749e6eb39519fa05
+50	1726	7620682738352922	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	1ce94e0fd56875a3
+42	1840	7620682739519258	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	5c48dab6730c0c2d
+1	1938	7620682740494037	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	ea896eef2c05d6ec
+21	2211	7620682743272897	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	928733b12a616c9
+8	2464	7620682745741819	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	7f3b10671424dfe1
+2464	2651	7620682747721370	C:/Users/USUARIO/Desktop/Personal/Universidad/7mo/AR/Battleship-AR/Battleship-AR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/502u1o45/obj/arm64-v8a/libgame.so	ce3a4e990ba3291e
