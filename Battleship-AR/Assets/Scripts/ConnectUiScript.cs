@@ -23,10 +23,7 @@ public class ConnectUiScript : MonoBehaviour
         if (networkManager == null)
             networkManager = GetComponent<NetworkManager>();
 
-        string localIP = GetLocalIPAddress();
-        if (ipDisplay != null)
-            ipDisplay.text = "Tu IP: " + localIP;
-        
+
 
     }
 
@@ -67,21 +64,29 @@ public class ConnectUiScript : MonoBehaviour
         NetworkManager.Singleton.StartClient();
     }
 
-   
+
 
 
 
     private string GetLocalIPAddress()
     {
-        string localIP = "127.0.0.1";
-        foreach (IPAddress ip in Dns.GetHostEntry(Dns.GetHostName()).AddressList)
+        try
         {
-            if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            foreach (IPAddress ip in Dns.GetHostAddresses(Dns.GetHostName()))
             {
-                localIP = ip.ToString();
-                break;
+                // Filtra solo direcciones IPv4 y evita direcciones autogeneradas (169.254.x.x)
+                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork && !ip.ToString().StartsWith("169.254"))
+                {
+                    return ip.ToString();
+                }
             }
         }
-        return localIP;
+        catch (System.Exception e)
+        {
+            Debug.LogError("Error al obtener la IP local: " + e.Message);
+        }
+
+        return "127.0.0.1"; // Valor de respaldo si no se obtiene una IP válida
     }
+
 }
