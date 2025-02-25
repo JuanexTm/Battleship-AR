@@ -6,12 +6,15 @@ public class Posiciones : MonoBehaviour
 {
     public List<Transform> posiciones;
 
-    private List<int> posicionesOcupadas;
+    public List<int> posicionesOcupadas = new List<int>();
+
+    Core core;
 
 
 
     private void Awake()
     {
+        core = GetComponent<Core>();
         for (int i = 0; i < 100; i++)
         {
             string name = i.ToString();
@@ -28,7 +31,7 @@ public class Posiciones : MonoBehaviour
         int casillaAnterior = casilla;
 
 
-        if (horizontal && casilla % 9 == 0) //Está a la derecha del todo
+        if (horizontal && casilla % 10 == 9) //Está a la derecha del todo
         {
             return false;
         }
@@ -41,7 +44,7 @@ public class Posiciones : MonoBehaviour
         
         while (contador < tamañoBarco)
         {
-            if(horizontal && casillaAnterior % 9 == 0) //Se sale por la derecha
+            if(horizontal && casillaAnterior % 10 == 9) //Se sale por la derecha
             {
                 return false;
             }
@@ -73,6 +76,19 @@ public class Posiciones : MonoBehaviour
 
     }
 
+    public void ColocarBarco(GameObject barco, int casillaDePosicion)
+    {
+        barco.transform.position = posiciones[casillaDePosicion].position;
+        Barco barcoScript = barco.GetComponent<Barco>();
+
+        barcoScript.casilla = casillaDePosicion;
+        
+        GestionarPosiciones(casillaDePosicion, barcoScript.tamañoDeBarco,barcoScript.horizontal, true); //OCUPAR EL ESPACIO
+
+        core.barcoSeñalado = null;
+        
+    }
+
     public void GestionarPosiciones(int casillaDePosicion, int tamañoDelBarco, bool horizontal, bool ocupar)
     {
 
@@ -81,15 +97,18 @@ public class Posiciones : MonoBehaviour
         {
             if (ocupar)
             {
-                posicionesOcupadas.Add(casilla);
+                if (!posicionesOcupadas.Contains(casilla))
+                {
+                    posicionesOcupadas.Add(casilla);
+                }
             }
             else
             {
                 posicionesOcupadas.Remove(casilla);
             }
 
-            if (horizontal) casillaDePosicion++;
-            else casillaDePosicion+=10;
+            if (horizontal) casilla++;
+            else casilla+=10;
         }
     }
 }
