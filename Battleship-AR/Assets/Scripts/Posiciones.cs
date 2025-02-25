@@ -111,6 +111,41 @@ public class Posiciones : MonoBehaviour
             else casilla+=10;
         }
     }
+
+    public void OnRotar()
+    {
+        GameObject barco = core.barcoSeñalado;
+        Barco barcoScript = barco.GetComponent<Barco>();
+
+        if (barco != null)
+        {
+            if (!barcoScript.posicionado)
+            {
+                if (barcoScript.horizontal)
+                {
+                    barcoScript.horizontal = false;
+                }
+                else
+                {
+                    barcoScript.horizontal = true;
+                }
+            }
+            else if(RevisarSiSePuedePonerBarco(barcoScript.casilla,barcoScript.tamañoDeBarco, !barcoScript.horizontal))
+                {
+                if (barcoScript.horizontal)
+                {
+                    barcoScript.horizontal = false;
+                }
+                else
+                {
+                    barcoScript.horizontal = true;
+                }
+
+            }
+
+
+        }
+    }
 }
 
 

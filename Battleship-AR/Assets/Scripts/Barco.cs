@@ -11,6 +11,8 @@ public class Barco : MonoBehaviour
 
     bool fueSeñalado;
 
+    public bool enTablero;
+
 
     Core core;
     Posiciones posiciones;
@@ -38,7 +40,7 @@ public class Barco : MonoBehaviour
         if(core.barcoSeñalado != gameObject && transform.position.y > alturaInicial)
         {
             transform.position += Vector3.down * core.speed * Time.deltaTime;
-            if(fueSeñalado)
+            if(fueSeñalado && enTablero)
             {
                 fueSeñalado = false;
                 posiciones.GestionarPosiciones(casilla, tamañoDeBarco, horizontal, true); //Ocupa espacio

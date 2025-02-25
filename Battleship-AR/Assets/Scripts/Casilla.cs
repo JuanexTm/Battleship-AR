@@ -21,6 +21,7 @@ public class Casilla : MonoBehaviour
             if (posiciones.RevisarSiSePuedePonerBarco(posicion, barco.tamañoDeBarco, barco.horizontal))
             {
                 posiciones.ColocarBarco(core.barcoSeñalado, posicion);
+                barco.enTablero = true;
             }
         }
     }
