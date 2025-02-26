@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Posiciones : MonoBehaviour
 {
@@ -15,12 +16,24 @@ public class Posiciones : MonoBehaviour
     private void Awake()
     {
         core = GetComponent<Core>();
+
+
+        Transform[] todosLosHijos = GetComponentsInChildren<Transform>();
+
         for (int i = 0; i < 100; i++)
         {
             string name = i.ToString();
-            posiciones.Add(GameObject.Find(name).GetComponent<Transform>());
-
+            foreach (Transform hijo in todosLosHijos)
+            {
+                if (hijo.name == name)
+                {
+                    posiciones.Add(hijo);
+                    break; // Encontramos la posición, no hace falta seguir buscando
+                }
+            }
         }
+
+
     }
 
     public bool RevisarSiSePuedePonerBarco(int posicion, int tamañoBarco, bool horizontal)

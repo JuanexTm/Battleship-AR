@@ -4,15 +4,17 @@ using Unity.Services.Core;
 using System;
 using Unity.Services.Authentication;
 using Unity.Services.Multiplayer;
-
+using TMPro;
 
 public class SessionManager : MonoBehaviour
 {
-    public Text sessionCodeText; // UI Text para mostrar el código de sesión
+    public TextMeshProUGUI textoCodigo;
     public InputField joinCodeInput; // InputField para ingresar el código de sesión
+    public GameObject[] aDesctivar;
 
     async void Start()
     {
+        textoCodigo.text = "";
         try
         {
             await UnityServices.InitializeAsync();
@@ -38,7 +40,9 @@ public class SessionManager : MonoBehaviour
             Debug.Log($"Session {session.Id} created! Join code: {session.Code}");
 
             // Mostrar el código de sesión en la UI
-            sessionCodeText.text = $"Join Code: {session.Code}";
+            textoCodigo.text = $"Sesión: {session.Code}";
+            DesactivarCanvas();
+            
         }
         catch (Exception e)
         {
@@ -59,10 +63,20 @@ public class SessionManager : MonoBehaviour
 
             var session = await MultiplayerService.Instance.JoinSessionByCodeAsync(joinCode);
             Debug.Log($"Joined session {session.Id} successfully!");
+            DesactivarCanvas();
         }
         catch (Exception e)
         {
             Debug.LogError($"Failed to join session: {e.Message}");
         }
     }
+
+    void DesactivarCanvas()
+    {
+        foreach (var item in aDesctivar)
+        {
+            item.SetActive(false);
+        }
+    }
+
 }
