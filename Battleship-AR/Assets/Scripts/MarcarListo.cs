@@ -38,7 +38,7 @@ public class MarcarListo : NetworkBehaviour
     }
     private void Update()
     {
-        if (core.barcosPosicionados)
+        if (core.barcosPosicionados && !listo)
         {
             GetComponent<Renderer>().material = materialPresionable;
         }
