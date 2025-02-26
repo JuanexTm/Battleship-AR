@@ -7,7 +7,7 @@ public class Barco : MonoBehaviour
     public int tamañoDeBarco;
     public bool horizontal;
 
-    private float alturaInicial;
+    public float alturaInicial;
 
     bool fueSeñalado;
 
@@ -21,7 +21,7 @@ public class Barco : MonoBehaviour
     {
         core = GameObject.FindGameObjectWithTag("Tablero").GetComponent<Core>();
         posiciones = GameObject.FindGameObjectWithTag("Tablero").GetComponent<Posiciones>();
-        alturaInicial = transform.position.y;
+        alturaInicial = transform.localPosition.y;
     }
 
 
@@ -30,16 +30,16 @@ public class Barco : MonoBehaviour
     {
         if (horizontal)
         {
-            transform.localRotation = Quaternion.Euler(0, -180, 0);
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
         else
         {
-            transform.localRotation = Quaternion.Euler(0,-90,0);
+            transform.localRotation = Quaternion.Euler(0,90,0);
         }
 
-        if(core.barcoSeñalado != gameObject && transform.position.y > alturaInicial)
+        if(core.barcoSeñalado != gameObject && transform.localPosition.y > alturaInicial)
         {
-            transform.position += Vector3.down * core.speed * Time.deltaTime;
+            transform.localPosition += Vector3.down * core.speed * Time.deltaTime;
             if(fueSeñalado && enTablero)
             {
                 fueSeñalado = false;
