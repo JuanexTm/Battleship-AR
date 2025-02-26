@@ -9,8 +9,8 @@ public class Casilla : MonoBehaviour
 
     private void Start()
     {
-        core = GameObject.FindGameObjectWithTag("Tablero").GetComponent<Core>();
-        posiciones = GameObject.FindGameObjectWithTag("Tablero").GetComponent<Posiciones>();
+        core = GetComponentInParent<Core>();
+        posiciones = GetComponentInParent<Posiciones>();
     }
     private void OnMouseDown()
     {

@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Inicio.unity
     guid: 530d8f2aeddf7ce4fb4de392fea28eab
+  - enabled: 0
+    path: Assets/Scenes/CoreGameplay.unity
+    guid: 3194729dbf58f554cb755f41fa3389b3
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

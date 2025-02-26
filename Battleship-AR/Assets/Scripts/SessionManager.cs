@@ -10,7 +10,7 @@ public class SessionManager : MonoBehaviour
 {
     public TextMeshProUGUI textoCodigo;
     public InputField joinCodeInput; // InputField para ingresar el código de sesión
-    public GameObject[] aDesctivar;
+    public GameObject[] aDesctivar, aActivar;
 
     async void Start()
     {

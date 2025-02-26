@@ -159,6 +159,18 @@ public class Posiciones : MonoBehaviour
 
         }
     }
+
+    private void Update()
+    {
+        if (posicionesOcupadas.Count == 19)
+        {
+            core.barcosPosicionados = true;
+        }
+        else
+        {
+            core.barcosPosicionados = false;
+        }
+    }
 }
 
 

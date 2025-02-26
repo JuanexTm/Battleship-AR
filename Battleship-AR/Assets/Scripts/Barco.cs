@@ -19,8 +19,8 @@ public class Barco : MonoBehaviour
 
     private void Start()
     {
-        core = GameObject.FindGameObjectWithTag("Tablero").GetComponent<Core>();
-        posiciones = GameObject.FindGameObjectWithTag("Tablero").GetComponent<Posiciones>();
+        core = GetComponentInParent<Core>();
+        posiciones = GetComponentInParent<Posiciones>();
         alturaInicial = transform.localPosition.y;
     }
 

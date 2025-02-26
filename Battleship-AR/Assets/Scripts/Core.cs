@@ -8,6 +8,7 @@ public class Core : MonoBehaviour
     public float speed = 1;
     public int jugador;
     public Material material1, material2;
+    public bool barcosPosicionados;
 
     private void Start()
     {
@@ -36,6 +37,8 @@ public class Core : MonoBehaviour
                 barcoSeñalado.transform.localPosition += Vector3.up * speed * Time.deltaTime;
             }
         }
+
+        
         
     }
 
