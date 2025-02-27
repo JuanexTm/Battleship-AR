@@ -174,7 +174,7 @@ public class Posiciones : MonoBehaviour
                     posicionesOcupadasArreglo[contador] = item;
                     contador++;
                 }
-                GameManagerNetwork.Instance.RegistrarPosicionesJugador1ClientRpc(posicionesOcupadasArreglo);
+                GameManagerNetwork.Instance.RegistrarPosicionesJugador1ServerRpc(posicionesOcupadasArreglo);
             }
             else if(core.jugador == 2)
             {
@@ -185,8 +185,9 @@ public class Posiciones : MonoBehaviour
                     posicionesOcupadasArreglo[contador] = item;
                     contador++;
                 }
-                GameManagerNetwork.Instance.RegistrarPosicionesJugador1ClientRpc(posicionesOcupadasArreglo);
+                GameManagerNetwork.Instance.RegistrarPosicionesJugador2ServerRpc(posicionesOcupadasArreglo);
             }
+            posicionesRegistradas = true;
         }
 
         if (posicionesOcupadas.Count == 19)

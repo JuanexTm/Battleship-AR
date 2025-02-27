@@ -1,10 +1,13 @@
 using System.Linq;
+using TMPro;
 using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Core : NetworkBehaviour
 {
+    public TextMeshProUGUI estadoTexto;
+
     public GameObject barcoSeñalado;
     public float yOffSet;
     public float speed = 1;
@@ -15,6 +18,7 @@ public class Core : NetworkBehaviour
     public GameObject botonAtaqueDefensa;
     public GameObject botonListo,botonRotar,botonConfirmarAtaque;
     public bool enTurno;
+    bool botonesDesactivados;
 
 
     public Casilla casilla;
@@ -26,6 +30,11 @@ public class Core : NetworkBehaviour
         false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server
     );
 
+
+    private void Awake()
+    {
+        estadoTexto = GameObject.Find("Estado").GetComponent<TextMeshProUGUI>();
+    }
 
 
     private void Start()
@@ -52,14 +61,9 @@ public class Core : NetworkBehaviour
         {
             GameManagerNetwork.Instance.RegistrarTableroServerRpc(0, gameObject);
         }
+        estadoTexto.text = "";
 
-        cambiosImportantes.OnValueChanged += (antes, despues) =>
-        {
-            if (despues)
-            {
-                AplicarCambiosClientRpc();
-            }
-        };
+        
 
         transform.SetParent(GameObject.Find("Tableros").transform);
         transform.localPosition = Vector3.zero;
@@ -81,22 +85,20 @@ public class Core : NetworkBehaviour
     }
 
 
-    public override void OnNetworkSpawn()
-    {
-        cambiosImportantes.OnValueChanged += (oldValue, newValue) =>
-        {
-            if (newValue)
-            {
-                AplicarCambiosClientRpc();
-            }
-        };
-    }
 
     private void Update()
     {
 
-        
-        
+        if (GameManagerNetwork.Instance.partidaIniciada.Value && !botonesDesactivados)
+        {
+            botonAtaqueDefensa.SetActive(true);
+            botonListo.SetActive(false);
+            botonRotar.SetActive(false);
+            botonesDesactivados = true;
+
+        }
+
+
         if (casilla != null && casillaAnterior == null)
         {
             casillaAnterior = casilla;
@@ -121,10 +123,12 @@ public class Core : NetworkBehaviour
             if (jugador == 1)
             {
                 enTurno = GameManagerNetwork.Instance.turnoJugador1.Value;
+                estadoTexto.text = GameManagerNetwork.Instance.textoPlayer1;
             }
             else
             {
                 enTurno = !GameManagerNetwork.Instance.turnoJugador1.Value;
+                estadoTexto.text = GameManagerNetwork.Instance.textoPlayer2;
             }
 
             if (ataqueDefensa.viendoEnemigo)
@@ -152,6 +156,9 @@ public class Core : NetworkBehaviour
             {
                 botonConfirmarAtaque.SetActive(false);
             }
+
+
+            
         }
 
 
@@ -165,23 +172,7 @@ public class Core : NetworkBehaviour
 
     }
 
-    [ClientRpc]
-    private void AplicarCambiosClientRpc()
-    {
-        Debug.Log("Aplicando cambios importantes en Core...");
-
-        if (GameManagerNetwork.Instance.partidaIniciada.Value)
-        {
-            botonAtaqueDefensa.SetActive(true);
-            botonListo.SetActive(false);
-            botonRotar.SetActive(false); Debug.Log("Rotar desactivado");
-        }
-
-
-        
-
-        cambiosImportantes.Value = false; // Resetear después de aplicar los cambios
-    }
+    
 
 
 

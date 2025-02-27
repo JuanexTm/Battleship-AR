@@ -23,9 +23,11 @@ public class GameManagerNetwork : NetworkBehaviour
     // Posiciones ocupadas por los barcos de cada jugador
     public List<int> posicionesBarcosJugador1 = new List<int>();
     public List<int> posicionesBarcosJugador2 = new List<int>();
+
+    public string textoPlayer1, textoPlayer2;
     
 
-    public TextMeshProUGUI estadoTexto;
+    
 
     public Core corePlayer1, corePlayer2;
     
@@ -59,7 +61,7 @@ public class GameManagerNetwork : NetworkBehaviour
     {
         Debug.Log("Ambos jugadores están listos. ¡Comienza la partida!");
         partidaIniciada.Value = true;
-        ActualizarUIClientRpc();
+        ActualizarUIServerRpc();
     }
 
     // Método para cambiar de turno
@@ -67,7 +69,7 @@ public class GameManagerNetwork : NetworkBehaviour
     public void CambiarTurnoServerRpc()
     {
         turnoJugador1.Value = (turnoJugador1.Value == true) ? false : true;
-        ActualizarUIClientRpc();
+        ActualizarUIServerRpc();
     }
 
     // Método que los clientes pueden llamar para saber si es su turno
@@ -88,8 +90,8 @@ public class GameManagerNetwork : NetworkBehaviour
     }
 
     // Método para registrar las posiciones de los barcos de cada jugador
-    [ClientRpc]
-    public void RegistrarPosicionesJugador1ClientRpc(int[] posicionesBarcos)
+    [ServerRpc(RequireOwnership = false)]
+    public void RegistrarPosicionesJugador1ServerRpc(int[] posicionesBarcos)
     {
         foreach (var item in posicionesBarcos)
         {
@@ -97,8 +99,8 @@ public class GameManagerNetwork : NetworkBehaviour
         }
     }
 
-    [ClientRpc]
-    public void RegistrarPosicionesJugador2ClientRpc(int[] posicionesBarcos)
+    [ServerRpc(RequireOwnership = false)]
+    public void RegistrarPosicionesJugador2ServerRpc(int[] posicionesBarcos)
     {
         foreach (var item in posicionesBarcos)
         {
@@ -106,8 +108,8 @@ public class GameManagerNetwork : NetworkBehaviour
         }
     }
 
-    [ClientRpc]
-    public void RevisarAtaqueClientRpc(int atacante,int casillaDeAtaque)
+    [ServerRpc(RequireOwnership = false)]
+    public void RevisarAtaqueServerRpc(int atacante,int casillaDeAtaque)
     {
         if(atacante == 1)
         {
@@ -143,36 +145,27 @@ public class GameManagerNetwork : NetworkBehaviour
     }
 
     // Actualizar el texto de turno en cada cliente
-    [ClientRpc]
-    private void ActualizarUIClientRpc()
+    [ServerRpc(RequireOwnership = false)]
+    private void ActualizarUIServerRpc()
     {
+        Debug.Log("Actualizando turnos");
+        corePlayer1.enTurno = turnoJugador1.Value;
+        corePlayer2.enTurno = !turnoJugador1.Value;
 
-        ulong miId = NetworkManager.Singleton.LocalClientId;
-        if (EsMiTurno(miId))
+        if (turnoJugador1.Value)
         {
-            estadoTexto.text = "¡Tu turno! Ataca";
-
-            Debug.Log("Actualizando turnos");
-            corePlayer1.enTurno = turnoJugador1.Value;
-            corePlayer2.enTurno = !turnoJugador1.Value;
-
-            Debug.Log("EnTurno player1: " + corePlayer1.enTurno);
-            Debug.Log("EnTurno player2: " + corePlayer2.enTurno);
-
-
-
+            textoPlayer1 = "¡Tu turno! Ataca";
+            textoPlayer2 = "Defensa. Espera al ataque del rival";
         }
         else
         {
-            estadoTexto.text = "Defensa. Espera el ataque del rival";
+            textoPlayer1 = "Defensa. Espera al ataque del rival";
+            textoPlayer2 = "¡Tu turno! Ataca";
         }
 
-        NotificarCambioServerRpc();
-
-
-
-
     }
+
+    
 
     [ServerRpc(RequireOwnership = false)]
     public void RegistrarTableroServerRpc(ulong playerId, NetworkObjectReference tableroRef)
@@ -198,12 +191,5 @@ public class GameManagerNetwork : NetworkBehaviour
 
 
 
-    [ServerRpc(RequireOwnership = false)]
-    private void NotificarCambioServerRpc()
-    {
-        corePlayer1.cambiosImportantes.Value = true;
-        corePlayer2.cambiosImportantes.Value = true;
-
-    }
 }
 

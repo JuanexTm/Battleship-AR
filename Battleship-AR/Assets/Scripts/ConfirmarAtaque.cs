@@ -5,7 +5,7 @@ using UnityEngine;
 public class ConfirmarAtaque : MonoBehaviour
 {
     Core core;
-    Material materialRojo, materialConfirmacion;
+    public Material materialRojo, materialConfirmacion;
     bool presionable;
     private void Start()
     {
@@ -33,7 +33,7 @@ public class ConfirmarAtaque : MonoBehaviour
         if(presionable)
         {
             int casillaDeAtaque = Convert.ToInt32(core.casilla.gameObject.name);
-            GameManagerNetwork.Instance.RevisarAtaqueClientRpc(core.jugador, casillaDeAtaque);
+            GameManagerNetwork.Instance.RevisarAtaqueServerRpc(core.jugador, casillaDeAtaque);
 
         }
     }

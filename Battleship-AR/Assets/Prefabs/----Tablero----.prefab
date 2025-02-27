@@ -7220,6 +7220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44691c2f97202bf41a6ddf37b06adcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materialRojo: {fileID: 2100000, guid: 94861a6d4a4735043be7e84690dffd03, type: 2}
+  materialConfirmacion: {fileID: 2100000, guid: 9f162c416cbc85b45aa2dd37b3f01c59,
+    type: 2}
 --- !u!1 &4963539984856758810
 GameObject:
   m_ObjectHideFlags: 0
@@ -14658,6 +14661,7 @@ MonoBehaviour:
   botonAtaqueDefensa: {fileID: 7672770448900217862}
   botonListo: {fileID: 9149873754895676404}
   botonRotar: {fileID: 253524860540096063}
+  botonConfirmarAtaque: {fileID: 4919924008150447580}
   enTurno: 0
   casilla: {fileID: 0}
   cambiosImportantes:
