@@ -42,9 +42,15 @@ public class MarcarListo : NetworkBehaviour
         {
             GetComponent<Renderer>().material = materialPresionable;
         }
-        else
+        else if(!listo)
         {
             GetComponent<Renderer>().material = materialNoPresionable;
+        }
+
+
+        if (core.partidaComenzada)
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -20,6 +20,11 @@ public class GameManagerNetwork : NetworkBehaviour
 
     public TextMeshProUGUI estadoTexto;
 
+    public Core corePlayer1, corePlayer2;
+    
+
+    
+
     private void Awake()
     {
         Instance = this;
@@ -102,14 +107,57 @@ public class GameManagerNetwork : NetworkBehaviour
     [ClientRpc]
     private void ActualizarUIClientRpc()
     {
+        //if (corePlayer1 == null && corePlayer2 == null)
+        //{
+        //    GameObject[] tableros = GameObject.FindGameObjectsWithTag("Tablero");
+        //    foreach (var tablero in tableros)
+        //    {
+        //        if (tablero.GetComponent<Core>().jugador == 1)
+        //        {
+        //            corePlayer1 = tablero.GetComponent<Core>();
+        //        }
+        //        else if (tablero.GetComponent<Core>().jugador == 2)
+        //        {
+        //            corePlayer2 = tablero.GetComponent<Core>();
+        //        }
+
+        //    }
+
+
+        //}
+
+        corePlayer1.partidaComenzada = true; corePlayer2.partidaComenzada = true;
+
         ulong miId = NetworkManager.Singleton.LocalClientId;
         if (EsMiTurno(miId))
         {
             estadoTexto.text = "¡Tu turno! Ataca";
+
+            corePlayer1.enTurno = (miId == 0) ? true : false;
+            corePlayer2.enTurno = (miId == 1) ? true : false;
+
+
         }
         else
         {
             estadoTexto.text = "Defensa. Espera el ataque del rival";
+        }
+
+        
+        
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void RegistrarTableroServerRpc(ulong playerId, NetworkObjectReference tableroRef)
+    {
+        if (tableroRef.TryGet(out NetworkObject tableroObj))
+        {
+            Core core = tableroObj.GetComponent<Core>();
+
+            if (playerId == 0)
+                corePlayer1 = core;
+            else if (playerId == 1)
+                corePlayer2 = core;
         }
     }
 }

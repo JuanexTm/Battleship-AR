@@ -53,11 +53,26 @@ public class Barco : MonoBehaviour
             fueSeñalado = true;
         }
 
+
+        if (core.ataqueDefensa.viendoEnemigo)
+        {
+            GetComponent<MeshRenderer>().enabled = false;
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().enabled = true;
+        }
+
         
     }
 
+
     private void OnMouseDown()
     {
+        if (core.partidaComenzada)
+        {
+            return;
+        }
 
         if(core.barcoSeñalado == gameObject)
         {
