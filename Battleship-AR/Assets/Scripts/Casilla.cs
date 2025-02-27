@@ -7,6 +7,7 @@ public class Casilla : MonoBehaviour
     Core core;
     Posiciones posiciones;
     public bool CasillaSeleccionada;
+    public Mesh circulo, equis;
 
     private void Start()
     {
@@ -26,11 +27,22 @@ public class Casilla : MonoBehaviour
                 barco.enTablero = true;
             }
         }
-        else if(GameManagerNetwork.Instance.partidaIniciada.Value && core.enTurno)
+        else if(GameManagerNetwork.Instance.partidaIniciada.Value && core.enTurno && core.ataqueDefensa.viendoEnemigo)
         {
             
             GetComponent<MeshRenderer>().enabled = true;
             core.casilla = GetComponent<Casilla>();
         }
+    }
+
+    public void MarcarDaño(bool daño)
+    {
+        GetComponent<MeshRenderer>().enabled = true;
+
+        if (daño) GetComponent<MeshFilter>().mesh = equis;
+        else GetComponent<MeshFilter>().mesh = circulo;
+
+        GetComponent<Collider>().enabled = false;
+        enabled = false;
     }
 }

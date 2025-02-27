@@ -26,9 +26,14 @@ public class GameManagerNetwork : NetworkBehaviour
     public List<int> posicionesBarcosJugador1 = new List<int>();
     public List<int> posicionesBarcosJugador2 = new List<int>();
 
+
     public NetworkVariable<FixedString128Bytes> textoPlayer1 = new NetworkVariable<FixedString128Bytes>();
 
     public  NetworkVariable<FixedString128Bytes> textoPlayer2 = new NetworkVariable<FixedString128Bytes>();
+
+
+    public int[] casillaAtacadaJugador1 = new int[2];
+    public int[] casillaAtacadaJugador2 = new int[2];
 
 
 
@@ -113,33 +118,55 @@ public class GameManagerNetwork : NetworkBehaviour
     }
 
     [ServerRpc(RequireOwnership = false)]
-    public void RevisarAtaqueServerRpc(int atacante,int casillaDeAtaque)
+    public void RevisarAtaqueServerRpc(int atacante, int casillaDeAtaque)
     {
-        if(atacante == 1)
+        bool impacto = false;
+
+        if (atacante == 1)
         {
-            if (posicionesBarcosJugador2.Contains(casillaDeAtaque))
+            casillaAtacadaJugador1[0] = casillaDeAtaque;
+            impacto = posicionesBarcosJugador2.Contains(casillaDeAtaque);
+            if (impacto)
             {
-                Debug.Log("ATAQUE EXITOSO");
+                casillaAtacadaJugador1[1] = 1; //1 impacto, 0 fallo
             }
             else
             {
-                Debug.Log("ATAQUE ERRADO");
-                CambiarTurnoServerRpc();
+                casillaAtacadaJugador1[1] = 0;
             }
         }
-        if(atacante == 2)
+        else if (atacante == 2)
         {
-            if (posicionesBarcosJugador1.Contains(casillaDeAtaque))
+            casillaAtacadaJugador2[0] = casillaDeAtaque;
+            impacto = posicionesBarcosJugador1.Contains(casillaDeAtaque);
+            if (impacto)
             {
-                Debug.Log("ATAQUE EXITOSO");
+                casillaAtacadaJugador2[1] = 1; //1 impacto, 0 fallo
             }
             else
             {
-                Debug.Log("ATAQUE ERRADO");
-                CambiarTurnoServerRpc();
+                casillaAtacadaJugador2[1] = 0;
             }
+        }
+
+        if (!impacto)
+        {
+            CambiarTurnoServerRpc();
+        }
+
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void LimpiarAtaquesServerRpc()
+    {
+        for (int i = 0; i < 2; i++) 
+        {
+            casillaAtacadaJugador1[i] = -1;
+            casillaAtacadaJugador2[i] = -1;
         }
     }
+
+
 
     // Notificar a todos los jugadores sobre el resultado del ataque
     [ClientRpc]
