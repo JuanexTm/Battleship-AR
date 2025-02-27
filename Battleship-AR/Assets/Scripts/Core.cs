@@ -1,9 +1,12 @@
 using JetBrains.Annotations;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections;
+
 
 public class Core : NetworkBehaviour
 {
@@ -169,14 +172,18 @@ public class Core : NetworkBehaviour
 
     }
 
-    
     public void RevisarAtaque()
     {
-        if (jugador == 1)
+        StartCoroutine(EsperarYRevisarAtaque());
+    }
+
+    public IEnumerator EsperarYRevisarAtaque()
+    {
+        yield return new WaitForSeconds(0.4f);
+        if (jugador == 2)
         {
             Debug.Log("Se presionó");
-            Debug.Log(GameManagerNetwork.Instance.casillaAtacadaJugador1[1]);
-            if (GameManagerNetwork.Instance.casillaAtacadaJugador1[1] == 0)
+            if (GameManagerNetwork.Instance.casillaAtacadaJugador2Int.Value == 0)
             {
                 casilla.GetComponent<Casilla>().MarcarDaño(false);
             }
@@ -185,10 +192,9 @@ public class Core : NetworkBehaviour
                 casilla.GetComponent<Casilla>().MarcarDaño(true);
             }
         }
-        else if (jugador == 2)
+        else if (jugador == 1)
         {
-
-            if (GameManagerNetwork.Instance.casillaAtacadaJugador2[1] == 0)
+            if (GameManagerNetwork.Instance.casillaAtacadaJugador1Int.Value == 0)
             {
                 casilla.GetComponent<Casilla>().MarcarDaño(false);
             }
@@ -199,7 +205,6 @@ public class Core : NetworkBehaviour
         }
 
         casilla = null;
-        GameManagerNetwork.Instance.LimpiarAtaquesServerRpc();
     }
 
 

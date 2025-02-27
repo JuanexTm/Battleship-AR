@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using Unity.Collections;
+using System.Collections;
+
 
 
 public class GameManagerNetwork : NetworkBehaviour
@@ -31,28 +33,21 @@ public class GameManagerNetwork : NetworkBehaviour
 
     public  NetworkVariable<FixedString128Bytes> textoPlayer2 = new NetworkVariable<FixedString128Bytes>();
 
-    public NetworkList<int> casillaAtacadaJugador1 = new NetworkList<int>();
-    public NetworkList<int> casillaAtacadaJugador2 = new NetworkList<int>();
+    public NetworkVariable<int> casillaAtacadaJugador1Int = new NetworkVariable<int>(
+     0, // Valor inicial
+     NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server); // Solo el servidor puede escribir
+
+    public NetworkVariable<int> casillaAtacadaJugador2Int = new NetworkVariable<int>(
+    0, // Valor inicial
+    NetworkVariableReadPermission.Everyone,NetworkVariableWritePermission.Server); // Solo el servidor puede escribir
+
 
 
 
     public Core corePlayer1, corePlayer2;
 
 
-    public override void OnNetworkSpawn()
-    {
-        base.OnNetworkSpawn();
-
-        if (IsServer) // Solo el servidor modifica las listas
-        {
-            casillaAtacadaJugador1.Add(-1);  // Posición 0
-            casillaAtacadaJugador1.Add(-1);  // Posición 1
-            casillaAtacadaJugador2.Add(-1);
-            casillaAtacadaJugador2.Add(-1);
-        }
-    }
-
-
+   
     private void Awake()
     {
         Instance = this;
@@ -137,16 +132,16 @@ public class GameManagerNetwork : NetworkBehaviour
 
         if (atacante == 1)
         {
-            casillaAtacadaJugador1[0] = casillaDeAtaque;
+           
             impacto = posicionesBarcosJugador2.Contains(casillaDeAtaque);
-            casillaAtacadaJugador1[1] = impacto ? 1 : 0; // 1 si hubo impacto, 0 si falló
+            casillaAtacadaJugador1Int.Value = impacto ? 1 : 0; // 1 si hubo impacto, 0 si falló
         }
         else if (atacante == 2)
         {
-            casillaAtacadaJugador2[0] = casillaDeAtaque;
             impacto = posicionesBarcosJugador1.Contains(casillaDeAtaque);
-            casillaAtacadaJugador2[1] = impacto ? 1 : 0;
+            casillaAtacadaJugador2Int.Value = impacto ? 1 : 0;
         }
+
 
         if (!impacto)
         {
@@ -154,14 +149,6 @@ public class GameManagerNetwork : NetworkBehaviour
         }
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    public void LimpiarAtaquesServerRpc()
-    {
-        casillaAtacadaJugador1[0] = -1;
-        casillaAtacadaJugador1[1] = -1;
-        casillaAtacadaJugador2[0] = -1;
-        casillaAtacadaJugador2[1] = -1;
-    }
 
 
 
