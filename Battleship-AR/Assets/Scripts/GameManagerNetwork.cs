@@ -22,7 +22,7 @@ public class GameManagerNetwork : NetworkBehaviour
 
     // Partida iniciada
     public NetworkVariable<bool> partidaIniciada = new NetworkVariable<bool>(
-        true, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+        false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     // Posiciones ocupadas por los barcos de cada jugador
     public List<int> posicionesBarcosJugador1 = new List<int>();
@@ -72,6 +72,17 @@ public class GameManagerNetwork : NetworkBehaviour
         Instance = this;
         partidaIniciada.Value = false;
 
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        if (IsServer)
+        {
+            Debug.Log("Inicializando valores en el host...");
+            partidaIniciada.Value = false;
+            jugador1Listo.Value = false;
+            jugador2Listo.Value = false;
+        }
     }
 
 

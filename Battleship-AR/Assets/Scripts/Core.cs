@@ -26,6 +26,9 @@ public class Core : NetworkBehaviour
 
     Posiciones posiciones;
 
+    public AudioSource aS;
+    public AudioClip audioExplosion, audioGotica;
+
     int golpes = -1;
     int errados = -1;
 
@@ -221,7 +224,7 @@ public class Core : NetworkBehaviour
 
     public IEnumerator EsperarYRevisarAtaque()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.6f);
         if (jugador == 2)
         {
             Debug.Log("Se presionó");

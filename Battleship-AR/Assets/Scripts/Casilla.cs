@@ -89,6 +89,7 @@ public class Casilla : MonoBehaviour
             Debug.Log("Golpe recibido en la casilla " + gameObject.name);
             Instantiate(explosion, transform.position, Quaternion.identity, padre.transform);
             explotado = true;
+            core.aS.PlayOneShot(core.audioExplosion);
         }
     }
 
@@ -103,6 +104,7 @@ public class Casilla : MonoBehaviour
 
             Instantiate(golpeErrado, transform.position, Quaternion.identity);
             errado = true;
+            core.aS.PlayOneShot(core.audioGotica);
         }
     }
 }
