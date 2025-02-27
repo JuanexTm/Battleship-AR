@@ -48,9 +48,9 @@ public class MarcarListo : NetworkBehaviour
         }
 
 
-        if (core.partidaComenzada)
+        if (GameManagerNetwork.Instance.partidaIniciada.Value)
         {
-            Destroy(gameObject);
+            gameObject.transform.position = Vector3.one * 999;
         }
     }
 }

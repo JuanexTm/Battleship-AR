@@ -57,10 +57,12 @@ public class Barco : MonoBehaviour
         if (core.ataqueDefensa.viendoEnemigo)
         {
             GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<Collider>().enabled = false;
         }
         else
         {
             GetComponent<MeshRenderer>().enabled = true;
+            GetComponent<Collider>().enabled = true;
         }
 
         
@@ -69,7 +71,7 @@ public class Barco : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (core.partidaComenzada)
+        if (GameManagerNetwork.Instance.partidaIniciada.Value)
         {
             return;
         }

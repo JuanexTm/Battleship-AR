@@ -13,7 +13,12 @@ public class GameManagerNetwork : NetworkBehaviour
     private NetworkVariable<bool> jugador2Listo = new NetworkVariable<bool>(false);
 
     // Control de turnos
-    private NetworkVariable<int> turnoActual = new NetworkVariable<int>(0); // 0: Jugador 1, 1: Jugador 2
+    public NetworkVariable<bool> turnoJugador1 = new NetworkVariable<bool>(
+        true, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+
+    // Partida iniciada
+    public NetworkVariable<bool> partidaIniciada = new NetworkVariable<bool>(
+        true, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     // Posiciones ocupadas por los barcos de cada jugador
     private Dictionary<ulong, List<int>> posicionesBarcos = new Dictionary<ulong, List<int>>();
@@ -28,15 +33,9 @@ public class GameManagerNetwork : NetworkBehaviour
     private void Awake()
     {
         Instance = this;
+        partidaIniciada.Value = false;
     }
 
-    public override void OnNetworkSpawn()
-    {
-        if (IsServer)
-        {
-            turnoActual.Value = 0;
-        }
-    }
 
     // Método para marcar que un jugador está listo
     [ServerRpc(RequireOwnership = false)]
@@ -57,6 +56,7 @@ public class GameManagerNetwork : NetworkBehaviour
     private void IniciarJuego()
     {
         Debug.Log("Ambos jugadores están listos. ¡Comienza la partida!");
+        partidaIniciada.Value = true;
         ActualizarUIClientRpc();
     }
 
@@ -64,14 +64,25 @@ public class GameManagerNetwork : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void CambiarTurnoServerRpc()
     {
-        turnoActual.Value = (turnoActual.Value == 0) ? 1 : 0;
+        turnoJugador1.Value = (turnoJugador1.Value == true) ? false : true;
         ActualizarUIClientRpc();
     }
 
     // Método que los clientes pueden llamar para saber si es su turno
     public bool EsMiTurno(ulong clientId)
     {
-        return (turnoActual.Value == (int)clientId);
+        if(clientId == 0 && turnoJugador1.Value)
+        {
+            return true;
+        }
+        else if(clientId == 1 && !turnoJugador1.Value)
+        {
+            return true;
+        }
+
+        return false;
+
+
     }
 
     // Método para registrar las posiciones de los barcos de cada jugador
@@ -107,34 +118,19 @@ public class GameManagerNetwork : NetworkBehaviour
     [ClientRpc]
     private void ActualizarUIClientRpc()
     {
-        //if (corePlayer1 == null && corePlayer2 == null)
-        //{
-        //    GameObject[] tableros = GameObject.FindGameObjectsWithTag("Tablero");
-        //    foreach (var tablero in tableros)
-        //    {
-        //        if (tablero.GetComponent<Core>().jugador == 1)
-        //        {
-        //            corePlayer1 = tablero.GetComponent<Core>();
-        //        }
-        //        else if (tablero.GetComponent<Core>().jugador == 2)
-        //        {
-        //            corePlayer2 = tablero.GetComponent<Core>();
-        //        }
-
-        //    }
-
-
-        //}
-
-        corePlayer1.partidaComenzada = true; corePlayer2.partidaComenzada = true;
 
         ulong miId = NetworkManager.Singleton.LocalClientId;
         if (EsMiTurno(miId))
         {
             estadoTexto.text = "¡Tu turno! Ataca";
 
-            corePlayer1.enTurno = (miId == 0) ? true : false;
-            corePlayer2.enTurno = (miId == 1) ? true : false;
+            Debug.Log("Actualizando turnos");
+            corePlayer1.enTurno = turnoJugador1.Value;
+            corePlayer2.enTurno = !turnoJugador1.Value;
+
+            Debug.Log("EnTurno player1: " + corePlayer1.enTurno);
+            Debug.Log("EnTurno player2: " + corePlayer2.enTurno);
+
 
 
         }
@@ -143,8 +139,11 @@ public class GameManagerNetwork : NetworkBehaviour
             estadoTexto.text = "Defensa. Espera el ataque del rival";
         }
 
-        
-        
+        NotificarCambioServerRpc();
+
+
+
+
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -154,11 +153,29 @@ public class GameManagerNetwork : NetworkBehaviour
         {
             Core core = tableroObj.GetComponent<Core>();
 
-            if (playerId == 0)
+            if (playerId == NetworkManager.ServerClientId) // El host (server)
+            {
                 corePlayer1 = core;
-            else if (playerId == 1)
+            }
+            else // Un cliente normal
+            {
                 corePlayer2 = core;
+            }
+
+            Debug.Log($"[GameManagerNetwork] Registrado tablero del jugador {playerId}: {core.name}");
         }
+    }
+
+
+
+
+
+    [ServerRpc(RequireOwnership = false)]
+    private void NotificarCambioServerRpc()
+    {
+        corePlayer1.cambiosImportantes.Value = true;
+        corePlayer2.cambiosImportantes.Value = true;
+
     }
 }
 
