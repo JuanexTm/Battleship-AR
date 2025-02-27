@@ -10,6 +10,7 @@ public class Posiciones : MonoBehaviour
     public List<int> posicionesOcupadas = new List<int>();
 
     Core core;
+    bool posicionesRegistradas;
 
 
 
@@ -162,6 +163,32 @@ public class Posiciones : MonoBehaviour
 
     private void Update()
     {
+        if (!posicionesRegistradas && GameManagerNetwork.Instance.partidaIniciada.Value)
+        {
+            if(core.jugador== 1)
+            {
+                int[] posicionesOcupadasArreglo = new int[posicionesOcupadas.Count];
+                int contador = 0;
+                foreach (var item in posicionesOcupadas)
+                {
+                    posicionesOcupadasArreglo[contador] = item;
+                    contador++;
+                }
+                GameManagerNetwork.Instance.RegistrarPosicionesJugador1ClientRpc(posicionesOcupadasArreglo);
+            }
+            else if(core.jugador == 2)
+            {
+                int[] posicionesOcupadasArreglo = new int[posicionesOcupadas.Count];
+                int contador = 0;
+                foreach (var item in posicionesOcupadas)
+                {
+                    posicionesOcupadasArreglo[contador] = item;
+                    contador++;
+                }
+                GameManagerNetwork.Instance.RegistrarPosicionesJugador1ClientRpc(posicionesOcupadasArreglo);
+            }
+        }
+
         if (posicionesOcupadas.Count == 19)
         {
             core.barcosPosicionados = true;

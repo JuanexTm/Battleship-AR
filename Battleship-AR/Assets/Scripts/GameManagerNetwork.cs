@@ -21,7 +21,9 @@ public class GameManagerNetwork : NetworkBehaviour
         true, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     // Posiciones ocupadas por los barcos de cada jugador
-    private Dictionary<ulong, List<int>> posicionesBarcos = new Dictionary<ulong, List<int>>();
+    public List<int> posicionesBarcosJugador1 = new List<int>();
+    public List<int> posicionesBarcosJugador2 = new List<int>();
+    
 
     public TextMeshProUGUI estadoTexto;
 
@@ -86,25 +88,51 @@ public class GameManagerNetwork : NetworkBehaviour
     }
 
     // Método para registrar las posiciones de los barcos de cada jugador
-    [ServerRpc(RequireOwnership = false)]
-    public void RegistrarPosicionesServerRpc(ulong playerId, int[] posiciones)
+    [ClientRpc]
+    public void RegistrarPosicionesJugador1ClientRpc(int[] posicionesBarcos)
     {
-        if (!posicionesBarcos.ContainsKey(playerId))
+        foreach (var item in posicionesBarcos)
         {
-            posicionesBarcos[playerId] = new List<int>();
+            posicionesBarcosJugador1.Add(item);
         }
-        posicionesBarcos[playerId].Clear();
-        posicionesBarcos[playerId].AddRange(posiciones);
     }
 
-    // Método para procesar un ataque
-    [ServerRpc(RequireOwnership = false)]
-    public void EnviarAtaqueServerRpc(ulong atacanteId, int posicion)
+    [ClientRpc]
+    public void RegistrarPosicionesJugador2ClientRpc(int[] posicionesBarcos)
     {
-        ulong oponenteId = (atacanteId == 0) ? 1UL : 0UL;
-        bool impacto = posicionesBarcos.ContainsKey(oponenteId) && posicionesBarcos[oponenteId].Contains(posicion);
+        foreach (var item in posicionesBarcos)
+        {
+            posicionesBarcosJugador2.Add(item);
+        }
+    }
 
-        NotificarResultadoAtaqueClientRpc(posicion, impacto);
+    [ClientRpc]
+    public void RevisarAtaqueClientRpc(int atacante,int casillaDeAtaque)
+    {
+        if(atacante == 1)
+        {
+            if (posicionesBarcosJugador2.Contains(casillaDeAtaque))
+            {
+                Debug.Log("ATAQUE EXITOSO");
+            }
+            else
+            {
+                Debug.Log("ATAQUE ERRADO");
+                CambiarTurnoServerRpc();
+            }
+        }
+        if(atacante == 2)
+        {
+            if (posicionesBarcosJugador1.Contains(casillaDeAtaque))
+            {
+                Debug.Log("ATAQUE EXITOSO");
+            }
+            else
+            {
+                Debug.Log("ATAQUE ERRADO");
+                CambiarTurnoServerRpc();
+            }
+        }
     }
 
     // Notificar a todos los jugadores sobre el resultado del ataque

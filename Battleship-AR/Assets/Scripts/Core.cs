@@ -13,8 +13,9 @@ public class Core : NetworkBehaviour
     public bool barcosPosicionados;
     public AtaqueDefensa ataqueDefensa;
     public GameObject botonAtaqueDefensa;
-    public GameObject botonListo,botonRotar;
+    public GameObject botonListo,botonRotar,botonConfirmarAtaque;
     public bool enTurno;
+
 
     public Casilla casilla;
     Casilla casillaAnterior;
@@ -67,11 +68,13 @@ public class Core : NetworkBehaviour
         if (IsServer && gameObject.name == "Tablero Client") // Solo en el servidor, no en el host
         {
             transform.position = Vector3.one * 999;
+            enabled = false;
         }
 
         if (IsClient && !IsServer && gameObject.name == "Tablero Host") // Solo en el cliente, no en el host
         {
             transform.position = Vector3.one * 999;
+            enabled = false;
         }
 
 
@@ -91,6 +94,8 @@ public class Core : NetworkBehaviour
 
     private void Update()
     {
+
+        
         
         if (casilla != null && casillaAnterior == null)
         {
@@ -133,11 +138,19 @@ public class Core : NetworkBehaviour
                     GetComponent<Renderer>().material = material1;
                 }
             }
-
-
             else
             {
                 GetComponent<Renderer>().material = materialPredeterminado;
+            }
+
+            if(ataqueDefensa.viendoEnemigo && enTurno)
+            {
+
+                botonConfirmarAtaque.SetActive(true);
+            }
+            else
+            {
+                botonConfirmarAtaque.SetActive(false);
             }
         }
 

@@ -7110,7 +7110,7 @@ GameObject:
   - component: {fileID: 5311755639798824611}
   - component: {fileID: 6889961886228427581}
   - component: {fileID: 5209392016860942908}
-  - component: {fileID: 8867543547357641304}
+  - component: {fileID: 232333701617676472}
   m_Layer: 0
   m_Name: Confirmar Ataque
   m_TagString: Untagged
@@ -7208,7 +7208,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8867543547357641304
+--- !u!114 &232333701617676472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7217,11 +7217,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4919924008150447580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03a8f6cd176b76f46b68f01bf21b0361, type: 3}
+  m_Script: {fileID: 11500000, guid: 44691c2f97202bf41a6ddf37b06adcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viendoEnemigo: 0
-  texto: {fileID: 1687465415457521576}
 --- !u!1 &4963539984856758810
 GameObject:
   m_ObjectHideFlags: 0
