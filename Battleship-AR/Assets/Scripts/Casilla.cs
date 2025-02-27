@@ -1,6 +1,5 @@
 using System;
 using TMPro;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class Casilla : MonoBehaviour
@@ -12,11 +11,31 @@ public class Casilla : MonoBehaviour
     public bool atacada;
     public GameObject explosion;
     public GameObject golpeErrado;
+    MeshRenderer mr;
+    bool errado;
+    GameObject padre;
+
+    bool explotado;
 
     private void Start()
     {
         core = GetComponentInParent<Core>();
         posiciones = GetComponentInParent<Posiciones>();
+        mr = GetComponent<MeshRenderer>();
+
+        padre = core.GetComponentInChildren<PadreHumo>().miniPadre;
+    }
+
+    private void Update()
+    {
+        if (!core.ataqueDefensa.viendoEnemigo)
+        {
+            mr.enabled = false;
+        }
+        else if(atacada)
+        {
+            mr.enabled = true;
+        }
     }
     private void OnMouseDown()
     {
@@ -34,7 +53,7 @@ public class Casilla : MonoBehaviour
         else if(GameManagerNetwork.Instance.partidaIniciada.Value && core.enTurno && core.ataqueDefensa.viendoEnemigo)
         {
             
-            GetComponent<MeshRenderer>().enabled = true;
+            mr.enabled = true;
             core.casilla = GetComponent<Casilla>();
         }
     }
@@ -50,7 +69,7 @@ public class Casilla : MonoBehaviour
             }
         }
         atacada = true;
-        GetComponent<MeshRenderer>().enabled = true;
+        mr.enabled = true;
 
         if (daño) GetComponent<MeshFilter>().mesh = equis;
         else GetComponent<MeshFilter>().mesh = circulo;
@@ -60,12 +79,30 @@ public class Casilla : MonoBehaviour
 
     public void Explotar()
     {
-        Debug.Log("Golpe recibido en la casilla " + gameObject.name);
-        Instantiate(explosion, transform.position, Quaternion.identity);
+        if(explotado)
+        {
+            return;
+        }
+        else
+        {
+
+            Debug.Log("Golpe recibido en la casilla " + gameObject.name);
+            Instantiate(explosion, transform.position, Quaternion.identity, padre.transform);
+            explotado = true;
+        }
     }
 
     public void Errado()
     {
-        Instantiate(golpeErrado, transform.position, Quaternion.identity);
+        if(errado)
+        {
+            return;
+        }
+        else
+        {
+
+            Instantiate(golpeErrado, transform.position, Quaternion.identity);
+            errado = true;
+        }
     }
 }

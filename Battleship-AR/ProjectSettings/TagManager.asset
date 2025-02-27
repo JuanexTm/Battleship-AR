@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Tablero
+  - PadreHumo
   layers:
   - Default
   - TransparentFX
