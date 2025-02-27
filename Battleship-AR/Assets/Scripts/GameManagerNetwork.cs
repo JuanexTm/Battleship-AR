@@ -3,6 +3,8 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Collections;
+
 
 public class GameManagerNetwork : NetworkBehaviour
 {
@@ -24,10 +26,12 @@ public class GameManagerNetwork : NetworkBehaviour
     public List<int> posicionesBarcosJugador1 = new List<int>();
     public List<int> posicionesBarcosJugador2 = new List<int>();
 
-    public string textoPlayer1, textoPlayer2;
-    
+    public NetworkVariable<FixedString128Bytes> textoPlayer1 = new NetworkVariable<FixedString128Bytes>();
 
-    
+    public  NetworkVariable<FixedString128Bytes> textoPlayer2 = new NetworkVariable<FixedString128Bytes>();
+
+
+
 
     public Core corePlayer1, corePlayer2;
     
@@ -154,13 +158,13 @@ public class GameManagerNetwork : NetworkBehaviour
 
         if (turnoJugador1.Value)
         {
-            textoPlayer1 = "¡Tu turno! Ataca";
-            textoPlayer2 = "Defensa. Espera al ataque del rival";
+            textoPlayer1.Value = "¡Tu turno! Ataca";
+            textoPlayer2.Value = "Defensa. Espera al ataque del rival";
         }
         else
         {
-            textoPlayer1 = "Defensa. Espera al ataque del rival";
-            textoPlayer2 = "¡Tu turno! Ataca";
+            textoPlayer1.Value = "Defensa. Espera al ataque del rival";
+            textoPlayer2.Value  = "¡Tu turno! Ataca";
         }
 
     }

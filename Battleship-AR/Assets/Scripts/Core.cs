@@ -26,9 +26,6 @@ public class Core : NetworkBehaviour
 
     private Material materialPredeterminado;
 
-    public NetworkVariable<bool> cambiosImportantes = new NetworkVariable<bool>(
-        false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server
-    );
 
 
     private void Awake()
@@ -61,7 +58,6 @@ public class Core : NetworkBehaviour
         {
             GameManagerNetwork.Instance.RegistrarTableroServerRpc(0, gameObject);
         }
-        estadoTexto.text = "";
 
         
 
@@ -123,12 +119,18 @@ public class Core : NetworkBehaviour
             if (jugador == 1)
             {
                 enTurno = GameManagerNetwork.Instance.turnoJugador1.Value;
-                estadoTexto.text = GameManagerNetwork.Instance.textoPlayer1;
+                estadoTexto.text = GameManagerNetwork.Instance.textoPlayer1.Value.ToString();
             }
             else
             {
                 enTurno = !GameManagerNetwork.Instance.turnoJugador1.Value;
-                estadoTexto.text = GameManagerNetwork.Instance.textoPlayer2;
+                estadoTexto.text = GameManagerNetwork.Instance.textoPlayer2.Value.ToString();
+            }
+
+            if (!IsServer)
+            {
+
+                
             }
 
             if (ataqueDefensa.viendoEnemigo)
