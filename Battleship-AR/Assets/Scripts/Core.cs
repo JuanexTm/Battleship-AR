@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Linq;
 using TMPro;
 using Unity.Netcode;
@@ -102,7 +103,10 @@ public class Core : NetworkBehaviour
 
         if(casilla != casillaAnterior)
         {
-            casillaAnterior.GetComponent<MeshRenderer>().enabled = false;
+            if (!casillaAnterior.atacada)
+            {
+                casillaAnterior.GetComponent<MeshRenderer>().enabled = false;
+            }
             casillaAnterior = casilla;
         }
 
@@ -159,26 +163,44 @@ public class Core : NetworkBehaviour
                 botonConfirmarAtaque.SetActive(false);
             }
 
-
             
         }
-
-
-        
-
-
-        
-
-
-
-
-
 
 
     }
 
     
+    public void RevisarAtaque()
+    {
+        if (jugador == 1)
+        {
+            Debug.Log("Se presionó");
+            Debug.Log(GameManagerNetwork.Instance.casillaAtacadaJugador1[1]);
+            if (GameManagerNetwork.Instance.casillaAtacadaJugador1[1] == 0)
+            {
+                casilla.GetComponent<Casilla>().MarcarDaño(false);
+            }
+            else
+            {
+                casilla.GetComponent<Casilla>().MarcarDaño(true);
+            }
+        }
+        else if (jugador == 2)
+        {
 
+            if (GameManagerNetwork.Instance.casillaAtacadaJugador2[1] == 0)
+            {
+                casilla.GetComponent<Casilla>().MarcarDaño(false);
+            }
+            else
+            {
+                casilla.GetComponent<Casilla>().MarcarDaño(true);
+            }
+        }
+
+        casilla = null;
+        GameManagerNetwork.Instance.LimpiarAtaquesServerRpc();
+    }
 
 
 

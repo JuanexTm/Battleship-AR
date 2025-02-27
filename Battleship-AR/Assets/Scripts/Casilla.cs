@@ -8,6 +8,7 @@ public class Casilla : MonoBehaviour
     Posiciones posiciones;
     public bool CasillaSeleccionada;
     public Mesh circulo, equis;
+    public bool atacada;
 
     private void Start()
     {
@@ -37,6 +38,7 @@ public class Casilla : MonoBehaviour
 
     public void MarcarDaño(bool daño)
     {
+        atacada = true;
         GetComponent<MeshRenderer>().enabled = true;
 
         if (daño) GetComponent<MeshFilter>().mesh = equis;
