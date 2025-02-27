@@ -104,9 +104,9 @@ public class Core : NetworkBehaviour
                 posiciones.posiciones[GameManagerNetwork.Instance.golpesRecibidosJugador1.Value].gameObject.GetComponent<Casilla>().Explotar();
             }
 
-            if (golpes != GameManagerNetwork.Instance.erradosRecibidosJugador1.Value)
+            if (errados != GameManagerNetwork.Instance.erradosRecibidosJugador1.Value)
             {
-                posiciones.posiciones[GameManagerNetwork.Instance.golpesRecibidosJugador1.Value].gameObject.GetComponent<Casilla>().Errado();
+                posiciones.posiciones[GameManagerNetwork.Instance.erradosRecibidosJugador1.Value].gameObject.GetComponent<Casilla>().Errado();
             }
 
             errados = GameManagerNetwork.Instance.erradosRecibidosJugador1.Value;
@@ -120,9 +120,9 @@ public class Core : NetworkBehaviour
                 posiciones.posiciones[GameManagerNetwork.Instance.golpesRecibidosJugador2.Value].gameObject.GetComponent<Casilla>().Explotar();
             }
 
-            if (golpes != GameManagerNetwork.Instance.erradosRecibidosJugador2.Value)
+            if (errados != GameManagerNetwork.Instance.erradosRecibidosJugador2.Value)
             {
-                posiciones.posiciones[GameManagerNetwork.Instance.golpesRecibidosJugador1.Value].gameObject.GetComponent<Casilla>().Errado();
+                posiciones.posiciones[GameManagerNetwork.Instance.erradosRecibidosJugador2.Value].gameObject.GetComponent<Casilla>().Errado();
             }
 
             errados = GameManagerNetwork.Instance.erradosRecibidosJugador2.Value;
