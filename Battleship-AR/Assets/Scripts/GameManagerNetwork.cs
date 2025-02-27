@@ -50,6 +50,16 @@ public class GameManagerNetwork : NetworkBehaviour
     -1, // Valor inicial
     NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server); // Solo el servidor puede escribir
 
+    public NetworkVariable<int> erradosRecibidosJugador1 = new NetworkVariable<int>(
+  -1, // Valor inicial
+  NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server); // Solo el servidor puede escribir
+
+    public NetworkVariable<int> erradosRecibidosJugador2 = new NetworkVariable<int>(
+  -1, // Valor inicial
+  NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server); // Solo el servidor puede escribir
+
+    
+
 
 
 
@@ -148,6 +158,10 @@ public class GameManagerNetwork : NetworkBehaviour
             {
                 ActualizarDefensorServerRpc(atacante, casillaDeAtaque);
             }
+            else
+            {
+                ActualizarErradorServerRpc(atacante, casillaDeAtaque);
+            }
         }
         else if (atacante == 2)
         {
@@ -156,6 +170,10 @@ public class GameManagerNetwork : NetworkBehaviour
             if (impacto)
             {
                 ActualizarDefensorServerRpc(atacante, casillaDeAtaque);
+            }
+            else
+            {
+                ActualizarErradorServerRpc(atacante, casillaDeAtaque);
             }
         }
 
@@ -176,6 +194,19 @@ public class GameManagerNetwork : NetworkBehaviour
         else
         {
             golpesRecibidosJugador1.Value = casillaDeAtaque;
+        }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void ActualizarErradorServerRpc(int atacante, int casillaDeAtaque)
+    {
+        if (atacante == 1)
+        {
+            erradosRecibidosJugador2.Value = casillaDeAtaque;
+        }
+        else
+        {
+            erradosRecibidosJugador1.Value = casillaDeAtaque;
         }
     }
 

@@ -73,6 +73,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &2516516026039071778
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -199,6 +203,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &746522094913963326
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -281,7 +289,7 @@ Transform:
   m_GameObject: {fileID: 124226305358686187}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: -0.89699996, y: 0.02222841, z: 0.09087324}
+  m_LocalPosition: {x: -0.89699996, y: 0.111896336, z: 0.09087324}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -452,6 +460,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &4301501327884782562
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -700,6 +712,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &7854142972623422614
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -782,7 +798,7 @@ Transform:
   m_GameObject: {fileID: 381448011497015010}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: -0.731, y: 0.03968069, z: -0.18612675}
+  m_LocalPosition: {x: -0.731, y: 0.1293486, z: -0.18612675}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -953,6 +969,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &3148816412654837653
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1079,6 +1099,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &5147555374987330037
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1381,6 +1405,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &1118681089429817416
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1507,6 +1535,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &4765801833107582112
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1674,6 +1706,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &842490060059982864
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1800,6 +1836,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &388341789904489874
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1926,6 +1966,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &749117058826514687
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2052,6 +2096,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &1307785726865444638
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2178,6 +2226,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &5100500805794216274
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2345,6 +2397,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &2720700687945417198
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2471,6 +2527,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &2676788275114357520
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2597,6 +2657,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &6364936369075684158
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2723,6 +2787,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &687072508883779557
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2849,6 +2917,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &2471891311072968605
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2931,7 +3003,7 @@ Transform:
   m_GameObject: {fileID: 1637155097494581357}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: -0.608, y: 0.02222841, z: 0.09387322}
+  m_LocalPosition: {x: -0.608, y: 0.111896336, z: 0.09387322}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3102,6 +3174,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &8345220788441541294
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3228,6 +3304,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &2544865325406015881
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3354,6 +3434,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &630432819595213021
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3480,6 +3564,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &8677135669949886092
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3606,6 +3694,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &2524789892252405418
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3764,6 +3856,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &211042094472434239
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3890,6 +3986,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &1178256883700868883
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4016,6 +4116,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &1580648487552804868
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4142,6 +4246,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &8268986359747644482
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4268,6 +4376,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &6541418338723823782
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4435,6 +4547,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &4716274928151241987
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4561,6 +4677,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &7436094896957703806
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4687,6 +4807,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &3483841732509991002
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4813,6 +4937,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &5046975318527237743
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4939,6 +5067,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &5919857055086236115
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5065,6 +5197,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &8889595056802369328
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5223,6 +5359,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &6343048292380456819
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5349,6 +5489,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &7245884009074833388
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5475,6 +5619,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &8092506062023513424
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5601,6 +5749,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &1962071714349745834
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5727,6 +5879,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &2794280281490018102
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5853,6 +6009,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &4094613417834762628
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5979,6 +6139,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &2025768441585484757
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6105,6 +6269,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &6886933017354736808
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6187,7 +6355,7 @@ Transform:
   m_GameObject: {fileID: 4120183298861698845}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: -0.58400005, y: 0.041332066, z: -0.38112673}
+  m_LocalPosition: {x: -0.58400005, y: 0.131, z: -0.38112673}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6403,6 +6571,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &1028230369675541254
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6529,6 +6701,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &852705096510564014
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6737,6 +6913,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &7677482917832166558
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6863,6 +7043,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &1363287586438376743
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6989,6 +7173,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &2344649973066514105
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7115,6 +7303,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &2941132727665203090
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7241,6 +7433,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &3341798859035392747
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7489,7 +7685,7 @@ Transform:
   m_GameObject: {fileID: 5277960009311756832}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: -0.58599997, y: 0.035401046, z: 0.37187323}
+  m_LocalPosition: {x: -0.58599997, y: 0.12506896, z: 0.37187323}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7660,6 +7856,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &844132957583032250
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7864,6 +8064,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &3633825804016993373
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7990,6 +8194,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &980278367661367794
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8292,6 +8500,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &1038381585041604674
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8418,6 +8630,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &6081736210086041020
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8544,6 +8760,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &1911491402837453147
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8670,6 +8890,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &4934467755637313898
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8796,6 +9020,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &7673197904337325986
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8922,6 +9150,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &4984738678369998470
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9080,6 +9312,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &127638077895005030
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9382,6 +9618,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &3347711103131425858
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9508,6 +9748,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &4488557279937798480
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9634,6 +9878,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &4394958689860025625
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9760,6 +10008,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &7527309064244579852
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9886,6 +10138,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &4426780485145719782
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10012,6 +10268,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &8567251362640586516
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10138,6 +10398,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &8704328278564559524
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10220,7 +10484,7 @@ Transform:
   m_GameObject: {fileID: 6562364578515721745}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: -0.92600006, y: 0.03968069, z: -0.18712679}
+  m_LocalPosition: {x: -0.92600006, y: 0.1293486, z: -0.18712679}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10432,6 +10696,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &568651887186895432
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10558,6 +10826,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &4130553351311324222
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10684,6 +10956,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &3573657360501894427
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10810,6 +11086,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &2321893536556700465
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10977,6 +11257,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &3038437213919319125
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11103,6 +11387,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &7035772241787997554
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11229,6 +11517,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &5482638268930901022
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11355,6 +11647,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &8544551330024536070
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11481,6 +11777,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &2513651304193450899
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11607,6 +11907,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &4755180444105338013
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11733,6 +12037,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &6504136525288767990
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11859,6 +12167,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &5836615311262899570
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11985,6 +12297,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &6296896420911203409
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12111,6 +12427,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &1228582767559201053
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12237,6 +12557,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &6900734062957946701
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12487,6 +12811,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &5229999663141761437
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12613,6 +12941,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &6931363008396060906
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12739,6 +13071,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &1904113182813070097
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12865,6 +13201,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &5743955074575937855
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12991,6 +13331,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &3506021565525289282
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13117,6 +13461,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &4692513866249410090
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13243,6 +13591,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &7285061688084037230
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13545,6 +13897,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &7144470282935313399
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13671,6 +14027,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &2829026205420896220
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13797,6 +14157,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &6680329064182016488
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13923,6 +14287,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &8346162186993595994
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14049,6 +14417,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &5787080207686686519
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14175,6 +14547,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &6268290391722117766
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14301,6 +14677,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &8006278316011568904
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14427,6 +14807,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &4986284385257240073
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14594,6 +14978,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &6229457881430938164
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14720,6 +15108,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &6762072622259699660
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14846,6 +15238,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &1935188480724490332
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15060,6 +15456,7 @@ MonoBehaviour:
   botonRotar: {fileID: 253524860540096063}
   botonConfirmarAtaque: {fileID: 4919924008150447580}
   enTurno: 0
+  puntaje: 0
   casilla: {fileID: 0}
 --- !u!1 &9112851705024186313
 GameObject:
@@ -15134,6 +15531,10 @@ MonoBehaviour:
     type: 3}
   equis: {fileID: -6844175823978675750, guid: 1516e5bfaa553534fb8c9be44791e30e, type: 3}
   atacada: 0
+  explosion: {fileID: 104829970813648393, guid: d3015b7eea383f64d8b81f965cc466e7,
+    type: 3}
+  golpeErrado: {fileID: 985483039366664255, guid: f91edac4d13fc4343ba96bb6a843ad05,
+    type: 3}
 --- !u!23 &6792132604559911539
 MeshRenderer:
   m_ObjectHideFlags: 0

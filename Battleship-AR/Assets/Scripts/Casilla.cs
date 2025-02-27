@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class Casilla : MonoBehaviour
@@ -9,6 +10,8 @@ public class Casilla : MonoBehaviour
     public bool CasillaSeleccionada;
     public Mesh circulo, equis;
     public bool atacada;
+    public GameObject explosion;
+    public GameObject golpeErrado;
 
     private void Start()
     {
@@ -58,5 +61,11 @@ public class Casilla : MonoBehaviour
     public void Explotar()
     {
         Debug.Log("Golpe recibido en la casilla " + gameObject.name);
+        Instantiate(explosion, transform.position, Quaternion.identity);
+    }
+
+    public void Errado()
+    {
+        Instantiate(golpeErrado, transform.position, Quaternion.identity);
     }
 }
