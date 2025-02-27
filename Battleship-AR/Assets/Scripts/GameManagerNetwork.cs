@@ -31,7 +31,7 @@ public class GameManagerNetwork : NetworkBehaviour
 
     public NetworkVariable<FixedString128Bytes> textoPlayer1 = new NetworkVariable<FixedString128Bytes>();
 
-    public  NetworkVariable<FixedString128Bytes> textoPlayer2 = new NetworkVariable<FixedString128Bytes>();
+    public NetworkVariable<FixedString128Bytes> textoPlayer2 = new NetworkVariable<FixedString128Bytes>();
 
     public NetworkVariable<int> casillaAtacadaJugador1Int = new NetworkVariable<int>(
      0, // Valor inicial
@@ -39,7 +39,16 @@ public class GameManagerNetwork : NetworkBehaviour
 
     public NetworkVariable<int> casillaAtacadaJugador2Int = new NetworkVariable<int>(
     0, // Valor inicial
-    NetworkVariableReadPermission.Everyone,NetworkVariableWritePermission.Server); // Solo el servidor puede escribir
+    NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server); // Solo el servidor puede escribir
+
+
+    public NetworkVariable<int> golpesRecibidosJugador1 = new NetworkVariable<int>(
+    -1, // Valor inicial
+    NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server); // Solo el servidor puede escribir
+
+    public NetworkVariable<int> golpesRecibidosJugador2 = new NetworkVariable<int>(
+    -1, // Valor inicial
+    NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server); // Solo el servidor puede escribir
 
 
 
@@ -47,14 +56,14 @@ public class GameManagerNetwork : NetworkBehaviour
     public Core corePlayer1, corePlayer2;
 
 
-   
+
     private void Awake()
     {
         Instance = this;
         partidaIniciada.Value = false;
 
     }
-    
+
 
 
 
@@ -92,11 +101,11 @@ public class GameManagerNetwork : NetworkBehaviour
     // Método que los clientes pueden llamar para saber si es su turno
     public bool EsMiTurno(ulong clientId)
     {
-        if(clientId == 0 && turnoJugador1.Value)
+        if (clientId == 0 && turnoJugador1.Value)
         {
             return true;
         }
-        else if(clientId == 1 && !turnoJugador1.Value)
+        else if (clientId == 1 && !turnoJugador1.Value)
         {
             return true;
         }
@@ -132,20 +141,41 @@ public class GameManagerNetwork : NetworkBehaviour
 
         if (atacante == 1)
         {
-           
+
             impacto = posicionesBarcosJugador2.Contains(casillaDeAtaque);
             casillaAtacadaJugador1Int.Value = impacto ? 1 : 0; // 1 si hubo impacto, 0 si falló
+            if(impacto)
+            {
+                ActualizarDefensorServerRpc(atacante, casillaDeAtaque);
+            }
         }
         else if (atacante == 2)
         {
             impacto = posicionesBarcosJugador1.Contains(casillaDeAtaque);
             casillaAtacadaJugador2Int.Value = impacto ? 1 : 0;
+            if (impacto)
+            {
+                ActualizarDefensorServerRpc(atacante, casillaDeAtaque);
+            }
         }
 
 
         if (!impacto)
         {
             CambiarTurnoServerRpc();
+        }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void ActualizarDefensorServerRpc(int atacante, int casillaDeAtaque)
+    {
+        if(atacante == 1)
+        {
+            golpesRecibidosJugador2.Value = casillaDeAtaque;
+        }
+        else
+        {
+            golpesRecibidosJugador1.Value = casillaDeAtaque;
         }
     }
 
@@ -175,12 +205,12 @@ public class GameManagerNetwork : NetworkBehaviour
         else
         {
             textoPlayer1.Value = "Defensa. Espera al ataque del rival";
-            textoPlayer2.Value  = "¡Tu turno! Ataca";
+            textoPlayer2.Value = "¡Tu turno! Ataca";
         }
 
     }
 
-    
+
 
     [ServerRpc(RequireOwnership = false)]
     public void RegistrarTableroServerRpc(ulong playerId, NetworkObjectReference tableroRef)
@@ -202,9 +232,25 @@ public class GameManagerNetwork : NetworkBehaviour
         }
     }
 
+    [ServerRpc(RequireOwnership = false)]
+    public void WinStateServerRpc(int jugador)
+    {
+
+        if (jugador == 1)
+        {
+            textoPlayer1.Value = "¡VICTORIA!";
+            textoPlayer2.Value = "DERROTA";
+        }
+        else
+        {
+            textoPlayer1.Value = "Derrota";
+            textoPlayer2.Value = "Victoria";
+        }
 
 
 
 
+
+    }
 }
 

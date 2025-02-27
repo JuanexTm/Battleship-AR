@@ -24,6 +24,12 @@ public class Core : NetworkBehaviour
     public bool enTurno;
     bool botonesDesactivados;
 
+    Posiciones posiciones;
+
+    int golpes = -1;
+
+    public int puntaje;
+
 
     public Casilla casilla;
     Casilla casillaAnterior;
@@ -35,6 +41,7 @@ public class Core : NetworkBehaviour
     private void Awake()
     {
         estadoTexto = GameObject.Find("Estado").GetComponent<TextMeshProUGUI>();
+        posiciones = GetComponentInChildren<Posiciones>();
     }
 
 
@@ -88,6 +95,26 @@ public class Core : NetworkBehaviour
 
     private void Update()
     {
+
+        if(jugador== 1)
+        {
+            if(golpes != GameManagerNetwork.Instance.golpesRecibidosJugador1.Value)
+            {
+                posiciones.posiciones[GameManagerNetwork.Instance.golpesRecibidosJugador1.Value].gameObject.GetComponent<Casilla>().Explotar();
+            }
+            golpes = GameManagerNetwork.Instance.golpesRecibidosJugador1.Value;
+            
+        }
+        else if(jugador == 2)
+        {
+            if (golpes != GameManagerNetwork.Instance.golpesRecibidosJugador1.Value)
+            {
+                posiciones.posiciones[GameManagerNetwork.Instance.golpesRecibidosJugador2.Value].gameObject.GetComponent<Casilla>().Explotar();
+            }
+            golpes = GameManagerNetwork.Instance.golpesRecibidosJugador1.Value;
+        }
+
+
 
         if (GameManagerNetwork.Instance.partidaIniciada.Value && !botonesDesactivados)
         {

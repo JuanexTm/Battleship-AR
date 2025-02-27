@@ -38,6 +38,14 @@ public class Casilla : MonoBehaviour
 
     public void MarcarDaño(bool daño)
     {
+        if (daño)
+        {
+            core.puntaje++;
+            if (core.puntaje == 19)
+            {
+                GameManagerNetwork.Instance.WinStateServerRpc(core.jugador);
+            }
+        }
         atacada = true;
         GetComponent<MeshRenderer>().enabled = true;
 
@@ -45,6 +53,10 @@ public class Casilla : MonoBehaviour
         else GetComponent<MeshFilter>().mesh = circulo;
 
         GetComponent<Collider>().enabled = false;
-        enabled = false;
+    }
+
+    public void Explotar()
+    {
+        Debug.Log("Golpe recibido en la casilla " + gameObject.name);
     }
 }
