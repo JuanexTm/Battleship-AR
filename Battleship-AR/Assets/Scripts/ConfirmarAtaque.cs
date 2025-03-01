@@ -1,15 +1,16 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ConfirmarAtaque : MonoBehaviour
 {
     Core core;
-    public Material materialRojo, materialConfirmacion;
+    public Color materialRojo, materialConfirmacion;
     bool presionable;
     private void Start()
     {
-        GetComponent<MeshRenderer>().material = materialRojo;
+        GetComponent<Image>().color = materialRojo;
         core = GetComponentInParent<Core>();
         gameObject.SetActive(false);
     }
@@ -19,16 +20,16 @@ public class ConfirmarAtaque : MonoBehaviour
         if(core.casilla != null)
         {
             presionable = true;
-            GetComponent<MeshRenderer>().material = materialConfirmacion;
+            GetComponent<Image>().color = materialConfirmacion;
         }
         else
         {
             presionable = false;
-            GetComponent<MeshRenderer>().material = materialRojo;
+            GetComponent<Image>().color = materialRojo;
         }
     }
 
-    private void OnMouseDown()
+    public void OnConfirmar()
     {
         if(presionable)
         {

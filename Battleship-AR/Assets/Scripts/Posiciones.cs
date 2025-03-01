@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
@@ -128,11 +129,13 @@ public class Posiciones : MonoBehaviour
 
     public void OnRotar()
     {
-        GameObject barco = core.barcoSeñalado;
-        Barco barcoScript = barco.GetComponent<Barco>();
 
-        if (barco != null)
+        if (core.barcoSeñalado != null)
         {
+            GameObject barco = core.barcoSeñalado;
+            Barco barcoScript = barco.GetComponent<Barco>();
+            
+
             if (!barcoScript.posicionado)
             {
                 if (barcoScript.horizontal)

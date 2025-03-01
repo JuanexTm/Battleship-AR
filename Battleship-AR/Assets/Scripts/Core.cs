@@ -11,6 +11,7 @@ using System.Collections;
 public class Core : NetworkBehaviour
 {
     public TextMeshProUGUI estadoTexto;
+    public GameObject UI;
 
     public GameObject barcoSeñalado;
     public float yOffSet;
@@ -65,6 +66,7 @@ public class Core : NetworkBehaviour
             GetComponent<Renderer>().material = material1;
             materialPredeterminado = material1;
         }
+
         if (NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer && jugador == 2)
         {
             GameManagerNetwork.Instance.RegistrarTableroServerRpc(NetworkManager.Singleton.LocalClientId, gameObject);
@@ -83,6 +85,7 @@ public class Core : NetworkBehaviour
         if (IsServer && gameObject.name == "Tablero Client") // Solo en el servidor, no en el host
         {
             transform.position = Vector3.one * 999;
+            UI.SetActive(false);
             enabled = false;
         }
 
@@ -90,6 +93,7 @@ public class Core : NetworkBehaviour
         {
             transform.position = Vector3.one * 999;
             enabled = false;
+            UI.SetActive(false);
         }
 
 

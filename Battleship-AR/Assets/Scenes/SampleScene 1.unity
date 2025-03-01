@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cdea0ece1a776408c7c12dd24c940f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textoCodigo: {fileID: 2027088598}
+  codigo: 
   joinCodeInput: {fileID: 448874444}
   aDesctivar:
   - {fileID: 1270773457}
@@ -3177,7 +3177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1874396096
 MonoBehaviour:
   m_ObjectHideFlags: 0

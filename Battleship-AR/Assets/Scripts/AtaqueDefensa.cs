@@ -4,7 +4,7 @@ using UnityEngine;
 public class AtaqueDefensa : MonoBehaviour
 {
     public bool viendoEnemigo;
-    public TextMeshPro texto;
+    public TextMeshProUGUI texto;
 
     private void Start()
     {
@@ -22,7 +22,7 @@ public class AtaqueDefensa : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    public void OnCambiarVista()
     {
         viendoEnemigo = (viendoEnemigo == true) ? false : true;
     }

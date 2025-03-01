@@ -1,18 +1,22 @@
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MarcarListo : NetworkBehaviour
 {
     Core core;
-    public Material materialNoPresionable, materialPresionable, materialPresionado;
+    public Color materialNoPresionable, materialPresionable, materialPresionado;
     bool listo;
+    public GameObject uiInGame;
+
 
     private void Start()
     {
         core = GetComponentInParent<Core>();
+        uiInGame.SetActive(false);
     }
 
-    private void OnMouseDown()
+    public void OnListo()
     {
         if (core.barcosPosicionados)
         {
@@ -20,37 +24,39 @@ public class MarcarListo : NetworkBehaviour
             {
                 listo = true;
                 GameManagerNetwork.Instance.MarcarListoServerRpc(NetworkManager.Singleton.LocalClientId, true);
-                GetComponent<Renderer>().material = materialPresionado;
+                GetComponent<Image>().color = materialPresionado;
 
             }
             else
             {
                 listo = false;
                 GameManagerNetwork.Instance.MarcarListoServerRpc(NetworkManager.Singleton.LocalClientId, false);
-                GetComponent<Renderer>().material = materialPresionable;
+                GetComponent<Image>().color = materialPresionable;
             }
         }
         else
         {
             GameManagerNetwork.Instance.MarcarListoServerRpc(NetworkManager.Singleton.LocalClientId, false);
-            GetComponent<Renderer>().material = materialNoPresionable;
+            GetComponent<Image>().color = materialNoPresionable;
         }
     }
     private void Update()
     {
         if (core.barcosPosicionados && !listo)
         {
-            GetComponent<Renderer>().material = materialPresionable;
+            GetComponent<Image>().color = materialPresionable;
         }
         else if(!listo)
         {
-            GetComponent<Renderer>().material = materialNoPresionable;
+            GetComponent<Image>().color = materialNoPresionable;
         }
 
 
         if (GameManagerNetwork.Instance.partidaIniciada.Value)
         {
-            gameObject.transform.position = Vector3.one * 999;
+            gameObject.SetActive(false);
+            uiInGame.SetActive(true);
+
         }
     }
 }

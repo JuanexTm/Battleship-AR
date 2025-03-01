@@ -8,13 +8,12 @@ using TMPro;
 
 public class SessionManager : MonoBehaviour
 {
-    public TextMeshProUGUI textoCodigo;
+    public string codigo;
     public InputField joinCodeInput; // InputField para ingresar el código de sesión
     public GameObject[] aDesctivar, aActivar;
 
     async void Start()
     {
-        textoCodigo.text = "";
         try
         {
             await UnityServices.InitializeAsync();
@@ -40,7 +39,7 @@ public class SessionManager : MonoBehaviour
             Debug.Log($"Session {session.Id} created! Join code: {session.Code}");
 
             // Mostrar el código de sesión en la UI
-            textoCodigo.text = $"Sesión: {session.Code}";
+            codigo = session.Code;
             DesactivarCanvas();
             
         }
